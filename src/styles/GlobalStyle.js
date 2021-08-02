@@ -10,5 +10,8 @@ export default createGlobalStyle`
     background-color: #14274E;
     color: white;
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+
+    padding: 0 10px;
   }
 `;
