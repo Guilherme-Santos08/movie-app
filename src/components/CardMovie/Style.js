@@ -10,7 +10,6 @@ export const Main = styled.main`
   max-width: 1358px;
   margin: 30px auto;
 
-
   .card__info {
     display: flex;
     flex-direction: column;
@@ -19,24 +18,30 @@ export const Main = styled.main`
 
     width: 319px;
     height: 402px;
-    background-color: #334756;
+    position: relative;
+    cursor: pointer;
 
+    transition: filter 0.2s ease-in-out;
+
+    &:hover {
+      filter: brightness(70%);
+    }
     .card__img {
       max-width: 100%;
       position: relative;
-      
+
       img {
         width: 100%;
-        max-height: 215px;
+        max-height: 402px;
         border-radius: 8px;
       }
 
-      > div{
+      > div {
         font-weight: bold;
 
         width: 95px;
         height: 42px;
-        background-color: #9BA4B4;
+        background-color: #9ba4b4;
         border-radius: 10px;
 
         display: flex;
@@ -48,17 +53,42 @@ export const Main = styled.main`
         left: 1rem;
       }
     }
-    
+
     .movie {
+      display: none;
+
       display: flex;
       flex-direction: column;
-      margin-top: 28px;
-      padding: 0 15px;
+      padding: 0 10px 10px;
+      border-radius: 0 0 8px 8px;
 
       font-size: 0.9rem;
       font-weight: 500;
+      background-color: #334756;
+      width: 100%;
+      /* backdrop-filter: blur(10px); */
 
-      > div {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+
+      transition: opacity .2s ease-in;
+
+      &.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .countrie_end_date {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
         margin-bottom: 15px;
       }
 
@@ -66,16 +96,22 @@ export const Main = styled.main`
         margin-top: 15px;
       }
 
+      .movie__name {
+        font-weight: bold;
+        font-size: 1.3rem;
+        text-align: center;
+        margin-top: 10px;
+      }
       .movie__type {
         font-size: 0.8rem;
-        color: #8D93AB;
+        color: #8d93ab;
       }
       .movie__countrie {
         text-transform: uppercase;
       }
     }
 
-    @media(max-width: 350px) {
+    @media (max-width: 350px) {
       width: 300px;
     }
   }
