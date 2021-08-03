@@ -70,6 +70,9 @@ export const Main = styled.main`
         font-size: 0.8rem;
         color: #8D93AB;
       }
+      .movie__countrie {
+        text-transform: uppercase;
+      }
     }
 
     @media(max-width: 350px) {

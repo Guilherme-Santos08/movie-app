@@ -1,77 +1,23 @@
-import { Main } from "./Style";
-
-const CardMovie = () => {
+const CardMovie = ({ countrie, date, name, votes, type, poster_path }) => {
+  const ImgMovie = "https://image.tmdb.org/t/p/w500/"
   return (
-    <Main>
-      <div className="card">
-        <div className="card__info">
-          <div className="card__img">
-            <img src="https://picsum.photos/200" alt="Imagem do filme" />
-            <div>Movie</div>
+    <div className="card">
+      <div className="card__info">
+        <div className="card__img">
+          <img src={ImgMovie + poster_path} alt={name} />
+          <div>Movie</div>
+        </div>
+        <div className="movie">
+          <div>
+            <span className="movie__countrie">{countrie}, </span>
+            <span className="movie__date">{date}</span>
           </div>
-          <div className="movie">
-            <div>
-              <span className="movie__countrie">Usa, </span>
-              <span className="movie__date">2016</span>
-            </div>
-            <span className="movie__name">Stranger Things</span>
-            <span className="movie__votes">8/10</span>
-            <span className="movie__type">Action/Adventure, Horror</span>
-          </div>
+          <span className="movie__name">{name}</span>
+          <span className="movie__votes">{votes}/10</span>
+          <span className="movie__type">{type}</span>
         </div>
       </div>
-      <div className="card">
-        <div className="card__info">
-          <div className="card__img">
-            <img src="https://picsum.photos/200" alt="Imagem do filme" />
-            <div>Movie</div>
-          </div>
-          <div className="movie">
-            <div>
-              <span className="movie__countrie">Usa, </span>
-              <span className="movie__date">2016</span>
-            </div>
-            <span className="movie__name">Stranger Things</span>
-            <span className="movie__votes">8/10</span>
-            <span className="movie__type">Action/Adventure, Horror</span>
-          </div>
-        </div>
-      </div>
-      <div className="card">
-        <div className="card__info">
-          <div className="card__img">
-            <img src="https://picsum.photos/200" alt="Imagem do filme" />
-            <div>Movie</div>
-          </div>
-          <div className="movie">
-            <div>
-              <span className="movie__countrie">Usa, </span>
-              <span className="movie__date">2016</span>
-            </div>
-            <span className="movie__name">Stranger Things</span>
-            <span className="movie__votes">8/10</span>
-            <span className="movie__type">Action/Adventure, Horror</span>
-          </div>
-        </div>
-      </div>
-      <div className="card">
-        <div className="card__info">
-          <div className="card__img">
-            <img src="https://picsum.photos/200" alt="Imagem do filme" />
-            <div>Movie</div>
-          </div>
-          <div className="movie">
-            <div>
-              <span className="movie__countrie">Usa, </span>
-              <span className="movie__date">2016</span>
-            </div>
-            <span className="movie__name">Stranger Things</span>
-            <span className="movie__votes">8/10</span>
-            <span className="movie__type">Action/Adventure, Horror</span>
-          </div>
-        </div>
-      </div>
-    </Main>
+    </div>
   );
 };
 
