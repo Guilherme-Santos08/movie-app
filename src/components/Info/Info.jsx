@@ -4,7 +4,7 @@ const Info = () => {
   return (
     <Infos>
       <div className="infos__title">
-        <h1>DzMovie <br/> API disponibilzada Pela TMD</h1>
+        <h1>DzMovie <br/> API disponibilzada Pela TMDB</h1>
       </div>
       <div className="infos__about">
         <p>
