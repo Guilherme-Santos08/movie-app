@@ -20,11 +20,10 @@ export const Main = styled.main`
     height: 402px;
     position: relative;
     cursor: pointer;
-
-    transition: filter 0.2s ease-in-out;
+    transition: filter 0.2s ease-in;
 
     &:hover {
-      filter: brightness(70%);
+      filter: brightness(90%);
     }
     .card__img {
       max-width: 100%;
@@ -78,7 +77,7 @@ export const Main = styled.main`
       visibility: hidden;
       overflow: hidden;
 
-      transition: opacity .2s ease-in;
+      transition: opacity .2s ease-in-out;
 
       &.show {
         opacity: 1;
