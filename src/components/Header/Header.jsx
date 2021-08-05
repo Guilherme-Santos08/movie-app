@@ -1,3 +1,4 @@
+// import { Link } from "react-router-dom";
 import { Menu } from "./Style";
 
 const Header = ({ value, handleMovieChange, handleMovieClick }) => {
@@ -15,7 +16,7 @@ const Header = ({ value, handleMovieChange, handleMovieClick }) => {
             value={value}
           />
           <button type="submit" onClick={handleMovieClick}>
-            Procurar Filme
+            Procurar
           </button>
         </div>
 

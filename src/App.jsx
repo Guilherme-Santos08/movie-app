@@ -51,6 +51,7 @@ function App() {
         {movies.length > 0 &&
           movies.map((movie) => (
             <CardMovie
+              key={movie.id}
               countrie={movie.original_language}
               date={movie.release_date}
               name={movie.original_title}

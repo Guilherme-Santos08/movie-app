@@ -10,6 +10,10 @@ export const Menu = styled.header`
 
   span {
     font-size: 2.2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   nav {
@@ -28,6 +32,11 @@ export const Menu = styled.header`
     max-width: 455px;
     width: 100%;
 
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+
     input {
       height: 51px;
 
@@ -41,9 +50,30 @@ export const Menu = styled.header`
 
       outline: none;
       border: 0;
+      margin-right: 8px;
 
       &::placeholder {
         font-weight: bold;
+      }
+    }
+    button {
+      width: 100px;
+      height: 38px;
+      padding: 0 12px;
+
+      text-transform: uppercase;
+      font-weight: bold;
+      color: white;
+      background-color: rgb(72, 94, 139);
+
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+
+      transition: filter .2s ease-in-out;
+
+      &:hover {
+        filter: brightness(0.9);
       }
     }
   }
@@ -52,5 +82,9 @@ export const Menu = styled.header`
     span {
       display: none;
     }
+  /* }
+  @media (max-width: 425px) {
+
+    } */
   }
 `;

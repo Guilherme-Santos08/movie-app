@@ -1,10 +1,10 @@
 import axios from "axios";
 
-function teste({ page }) {
-  axios.create({
-    baseURL: `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=40698a7bda352049c103b665527f1793&page=${page}`,
-  });
-}
+// function teste({ page }) {
+//   axios.create({
+//     baseURL: `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=40698a7bda352049c103b665527f1793&page=${page}`,
+//   });
+// }
 
 export const apiSearch = axios.create({
   baseURL: `https://api.themoviedb.org/3/search/movie?&api_key=40698a7bda352049c103b665527f1793&query=`,

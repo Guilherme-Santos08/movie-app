@@ -21,6 +21,7 @@ export const Main = styled.main`
     position: relative;
     cursor: pointer;
     transition: filter 0.2s ease-in;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /*pode ser transparent também*/
 
     &:hover {
       filter: brightness(90%);
@@ -33,6 +34,7 @@ export const Main = styled.main`
         width: 100%;
         max-height: 402px;
         border-radius: 8px;
+        color: inherit;
       }
 
       > div {
@@ -77,7 +79,7 @@ export const Main = styled.main`
       visibility: hidden;
       overflow: hidden;
 
-      transition: opacity .2s ease-in-out;
+      transition: opacity 0.2s ease-in-out;
 
       &.show {
         opacity: 1;
