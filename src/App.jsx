@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api, apiSearch, apiSearchMovies } from "./api/api";
+import { api, apiSearch } from "./api/api";
 
 import CardMovie from "./components/CardMovie/CardMovie";
 import Header from "./components/Header/Header";
