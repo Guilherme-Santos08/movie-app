@@ -1,6 +1,6 @@
 import { Menu } from "./Style";
 
-const Header = () => {
+const Header = ({ value, handleMovieChange, handleMovieClick }) => {
   return (
     <Menu>
       <nav>
@@ -8,15 +8,18 @@ const Header = () => {
 
         <div className="search">
           <input
-          type="text"
-          className="search"
-          placeholder="Search for Movies"
+            type="text"
+            className="search"
+            placeholder="Search for Movies"
+            onChange={handleMovieChange}
+            value={value}
           />
+          <button type="submit" onClick={handleMovieClick}>
+            Procurar Filme
+          </button>
         </div>
 
-        <div className="language">
-          EN
-        </div>
+        <div className="language">EN</div>
       </nav>
     </Menu>
   );
