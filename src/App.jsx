@@ -66,11 +66,6 @@ function App() {
     SetPagesMovies(pagesMovies + 1);
   };
 
-  const blockOrPass = () => {
-    // console.log(pagesMovies);
-    return pagesMovies;
-  };
-
   return (
     <>
       <Header
