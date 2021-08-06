@@ -6,11 +6,14 @@ const ButtonSkiporPrev = ({
   handleNextClick,
   blockOrPass,
 }) => {
-  console.log(blockOrPass.length)
+  console.log(blockOrPass.length);
   return (
     <Div>
       <button
-        className={`prev ${0 === blockOrPass ? "disabled-btn" : ""}`}
+        style={
+          blockOrPass === 1 ? { cursor: "no-drop" } : { cursor: "pointer" }
+        }
+        className="prev"
         onClick={handlePrevClick}
       >
         <AiOutlineArrowLeft />

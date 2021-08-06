@@ -13,13 +13,13 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [searchMovies, SetSearchMovies] = useState("");
   const [pagesMovies, SetPagesMovies] = useState(1);
-  console.log(pagesMovies);
-
+  // console.log(pagesMovies);
+  
   useEffect(() => {
     const fetchMovie = async () => {
       const resp = await api.get("0");
       const respData = resp;
-      // console.log(respData.data.results);
+      console.log(respData.data.results);
       setMovies(respData.data.results);
     };
     fetchMovie();
@@ -90,6 +90,7 @@ function App() {
               votes={movie.vote_average}
               type={movie.original_language}
               poster_path={movie.poster_path}
+              moviesId={movie.id}
             />
           ))}
       </Main>

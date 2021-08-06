@@ -13,19 +13,26 @@ export const Main = styled.main`
   .card__info {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    border-radius: 8px;
-
+    
     width: 319px;
     height: 402px;
     position: relative;
+    
     cursor: pointer;
+    border-radius: 8px;
     transition: filter 0.2s ease-in;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /*pode ser transparent também*/
+    transition: translate 0.3s ease-in-out;
+    -webkit-tap-highlight-color: rgba(
+      0,
+      0,
+      0,
+      0
+    ); /*pode ser transparent também*/
 
     &:hover {
       filter: brightness(90%);
     }
+
     .card__img {
       max-width: 100%;
       position: relative;
@@ -58,7 +65,8 @@ export const Main = styled.main`
     .movie {
       display: none;
 
-      display: flex;
+      transform: translateY(100%);
+
       flex-direction: column;
       padding: 0 10px 10px;
       border-radius: 0 0 8px 8px;
@@ -75,22 +83,19 @@ export const Main = styled.main`
       right: 0;
       z-index: 999;
 
-      opacity: 0;
-      visibility: hidden;
       overflow: hidden;
-
-      transition: opacity 0.2s ease-in-out;
-
-      &.show {
-        opacity: 1;
-        visibility: visible;
-      }
 
       .countrie_end_date {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
         margin-bottom: 15px;
+      }
+
+      h3,
+      span {
+        opacity: 1;
+        visibility: 1;
       }
 
       & span + span {
@@ -109,6 +114,13 @@ export const Main = styled.main`
       }
       .movie__countrie {
         text-transform: uppercase;
+      }
+    }
+
+    &:hover {
+      .movie {
+        transform: translateY(0);
+        display: flex;
       }
     }
 
