@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { api, apiSearch } from "./api/api";
 
-import CardMovie from "./components/CardMovie/CardMovie";
 import Header from "./components/Header/Header";
+import CardMovie from "./components/CardMovie/CardMovie";
 import Info from "./components/Info/Info";
+import ButtonSkiporPrev from "./components/ButtonSkipOrPrev/ButtonSkipOrPrev";
 
 import { Main } from "./components/CardMovie/Style";
-import ButtonSkiporPrev from "./components/ButtonSkipOrPrev/ButtonSkipOrPrev";
 import axios from "axios";
 
 function App() {
@@ -66,6 +66,11 @@ function App() {
     SetPagesMovies(pagesMovies + 1);
   };
 
+  const blockOrPass = () => {
+    // console.log(pagesMovies);
+    return pagesMovies;
+  };
+
   return (
     <>
       <Header
@@ -91,6 +96,7 @@ function App() {
       <ButtonSkiporPrev
         handlePrevClick={handlePrevClick}
         handleNextClick={handleNextClick}
+        blockOrPass={pagesMovies}
       />
     </>
   );

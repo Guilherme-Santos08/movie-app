@@ -19,6 +19,10 @@ export const Div = styled.div`
     border: none;
     transition: filter 0.2s ease-in-out;
 
+    &.disabled-btn {
+      cursor: no-drop;
+    }
+
     &:hover {
       filter: brightness(0.9);
     }
