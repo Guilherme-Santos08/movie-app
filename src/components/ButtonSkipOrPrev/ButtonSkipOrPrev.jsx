@@ -1,12 +1,17 @@
 import { Div } from "./style";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { useEffect } from "react";
 
 const ButtonSkiporPrev = ({
   handlePrevClick,
   handleNextClick,
   blockOrPass,
 }) => {
-  console.log(blockOrPass.length);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [handlePrevClick, handleNextClick]);
+  // console.log(blockOrPass.length);
+  
   return (
     <Div>
       <button
