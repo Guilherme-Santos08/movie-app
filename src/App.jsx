@@ -8,13 +8,14 @@ import ButtonSkiporPrev from "./components/ButtonSkipOrPrev/ButtonSkipOrPrev";
 
 import { Main } from "./components/CardMovie/Style";
 import axios from "axios";
+import Loading from "./components/Loading/Loading";
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchMovies, SetSearchMovies] = useState("");
   const [pagesMovies, SetPagesMovies] = useState(1);
   // console.log(pagesMovies);
-  
+
   useEffect(() => {
     const fetchMovie = async () => {
       const resp = await api.get("0");
@@ -74,6 +75,7 @@ function App() {
         value={searchMovies}
       />
       <Info />
+      <Loading />
       <Main>
         {movies.length > 0 &&
           movies.map((movie) => (
