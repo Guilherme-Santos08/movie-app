@@ -46,12 +46,9 @@ function App() {
   const handleMovieClick = (e) => {
     e.preventDefault();
 
-    // console.log(searchMovies);
-
     const searchMovie = async () => {
       const resp = await apiSearch.get(searchMovies);
       const respData = resp;
-      // console.log(respData.data.results);
       setMovies(respData.data.results);
     };
     searchMovie();

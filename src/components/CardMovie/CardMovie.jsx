@@ -1,13 +1,10 @@
 import { useState } from "react";
 
 const CardMovie = ({
-  countrie,
   date,
   name,
   votes,
-  type,
   poster_path,
-  moviesId,
 }) => {
   const ImgMovie = "https://image.tmdb.org/t/p/w500/";
 
