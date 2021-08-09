@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import Lottie from "react-lottie";
 import * as loading from "./loading.json";
 
@@ -18,4 +19,8 @@ const Loading = () => {
   );
 };
 
+export const Div = styled.div`
+  align-items: center;
+  justify-content: center;
+`
 export default Loading;

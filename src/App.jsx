@@ -14,17 +14,30 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [searchMovies, SetSearchMovies] = useState("");
   const [pagesMovies, SetPagesMovies] = useState(1);
-  // console.log(pagesMovies);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMovie = async () => {
       const resp = await api.get("0");
       const respData = resp;
-      console.log(respData.data.results);
       setMovies(respData.data.results);
+      setLoading(true);
     };
     fetchMovie();
   }, []);
+
+  useEffect(() => {
+    const searchMovie = async () => {
+      const resp = await axios.get(
+        `https://api.themoviedb.org/3/discover/movie?api_key=40698a7bda352049c103b665527f1793&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_watch_monetization_types=flatrate&page=${pagesMovies}`
+      );
+      const respData = resp;
+      setMovies(respData.data.results);
+      setLoading(true);
+
+    };
+    searchMovie();
+  }, [pagesMovies]);
 
   const handleMovieChange = (e) => {
     SetSearchMovies(e.target.value);
@@ -43,18 +56,6 @@ function App() {
     };
     searchMovie();
   };
-
-  useEffect(() => {
-    const searchMovie = async () => {
-      const resp = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=40698a7bda352049c103b665527f1793&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_watch_monetization_types=flatrate&page=${pagesMovies}`
-      );
-      const respData = resp;
-      // console.log(respData.data.results);
-      setMovies(respData.data.results);
-    };
-    searchMovie();
-  }, [pagesMovies]);
 
   const handlePrevClick = () => {
     SetPagesMovies(pagesMovies - 1);
@@ -75,21 +76,26 @@ function App() {
         value={searchMovies}
       />
       <Info />
-      <Loading />
       <Main>
-        {movies.length > 0 &&
-          movies.map((movie) => (
-            <CardMovie
-              key={movie.id}
-              countrie={movie.original_language}
-              date={movie.release_date}
-              name={movie.original_title}
-              votes={movie.vote_average}
-              type={movie.original_language}
-              poster_path={movie.poster_path}
-              moviesId={movie.id}
-            />
-          ))}
+        {!loading ? (
+          <Loading />
+        ) : (
+          <>
+            {movies.length > 0 &&
+              movies.map((movie) => (
+                <CardMovie
+                  key={movie.id}
+                  countrie={movie.original_language}
+                  date={movie.release_date}
+                  name={movie.original_title}
+                  votes={movie.vote_average}
+                  type={movie.original_language}
+                  poster_path={movie.poster_path}
+                  moviesId={movie.id}
+                />
+              ))}
+          </>
+        )}
       </Main>
       <ButtonSkiporPrev
         handlePrevClick={handlePrevClick}
