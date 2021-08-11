@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/kvgsFYS.gif" width="80%"/>
+<img src="https://i.imgur.com/UaTlzll.gif" width="80%"/>
 </p>
 
 ## 📖 Sobre
