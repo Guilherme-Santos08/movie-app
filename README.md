@@ -6,10 +6,6 @@
   <a href="#-live">Live do Projeto</a>
 </p>
 
-<p align="center">
-<img src="https://i.imgur.com/UaTlzll.gif" width="80%"/>
-</p>
-
 ## 📖 Sobre
 Site aonde você pode pesquisar sobre o filme e ver os filmes mais populares do momento.
 
